@@ -1,6 +1,7 @@
 # CityPulse AI
 
-CityPulse is an AI-powered platform for citizens to report civic issues and for authorities to monitor, manage, and analyze them via an intuitive dashboard and hotspot map.
+## About
+CityPulse is an AI-powered platform for citizens to report civic issues and for authorities to monitor, manage, and analyze them via an intuitive dashboard and hotspot map. It bridges the gap between citizens and local authorities to create smarter, cleaner, and more responsive cities.
 
 ## Project Structure
 - `frontend/`: A Next.js web application containing portals for both citizens and authorities.
