@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24  # 24 hours
 
     # Database - SQLite for local dev, swap to PostgreSQL URL for production
-    DATABASE_URL: str = "sqlite+aiosqlite:///./citypulse.db"
+    DATABASE_URL: str = "sqlite+aiosqlite:////tmp/citypulse.db" if os.getenv("VERCEL") else "sqlite+aiosqlite:///./citypulse.db"
 
     # AI Provider — "ollama" uses local Ollama; set GEMINI_API_KEY to use Gemini instead
     GEMINI_API_KEY: Optional[str] = None
@@ -27,7 +27,7 @@ class Settings(BaseSettings):
     OLLAMA_VISION_MODEL: str = "llava:13b"
 
     # File Upload
-    UPLOAD_DIR: str = "uploads"
+    UPLOAD_DIR: str = "/tmp/uploads" if os.getenv("VERCEL") else "uploads"
     MAX_UPLOAD_SIZE_MB: int = 10
     ALLOWED_IMAGE_TYPES: list = ["image/jpeg", "image/png", "image/webp", "image/gif"]
 
